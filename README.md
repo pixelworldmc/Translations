@@ -14,6 +14,14 @@ We're human, and humans sometimes make mistakes. So, if you find a typo, grammat
 
 Languages are gateways to the world. If you're fluent in a language that we don't have yet, we would love for you to help us add it.
 
+## File Naming and Syntax Rules
+
+When contributing, please ensure to follow these conventions:
+
+- The filename should follow this structure: `messages_[LANGUAGE]_[(optional) COUNTRY CODE].properties`.
+- The syntax within the file should look like this: `test.string="test"`.
+- No special characters except a period are allowed before the equals sign, like: `te/st.string="test"`.
+
 ## How can I contribute?
 
 1. **Fork** this repository to your own GitHub account.

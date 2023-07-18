@@ -1,0 +1,23 @@
+name: Check Properties
+
+on:
+  pull_request:
+    paths:
+      - '**.properties'
+
+jobs:
+  check-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate properties files
+        run: |
+          for file in $(find . -name "*.properties"); do
+            echo "Validating $file"
+            if grep -qP '^[^=]*[^a-zA-Z0-9.].*=' $file; then
+              echo "Invalid syntax in $file"
+              exit 1
+            fi
+          done

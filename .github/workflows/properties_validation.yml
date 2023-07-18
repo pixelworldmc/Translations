@@ -1,0 +1,21 @@
+name: Check Properties
+
+on:
+  pull_request:
+    paths:
+      - '**.properties'
+
+jobs:
+  check-syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Validate properties files
+        run: |
+          sudo apt-get install -yq gettext
+          for file in $(find . -name "*.properties"); do
+              echo "Validating $file"
+              msgfmt --check-format --check-domain -o /dev/null $file
+          done

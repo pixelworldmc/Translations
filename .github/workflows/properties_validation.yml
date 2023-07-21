@@ -19,7 +19,7 @@ jobs:
           do
             while IFS= read -r LINE
             do
-              if [[ ! $LINE =~ ^[a-zA-Z0-9.]*=.*$|^#.*$|^$ ]]; then
+              if [[ ! $LINE =~ ^[a-zA-Z0-9._]*=.*$|^#.*$|^$ ]]; then
                 echo "Syntax error in file $FILE: $LINE"
                 exit 1
               fi

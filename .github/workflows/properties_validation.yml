@@ -1,4 +1,4 @@
-name: Check Properties
+name: Check Properties File
 
 on:
   pull_request:
@@ -14,10 +14,14 @@ jobs:
 
       - name: Validate properties files
         run: |
-          for file in $(find . -name "*.properties"); do
-            echo "Validating $file"
-            if grep -qP '^[^=]*[^a-zA-Z0-9.].*=' $file; then
-              echo "Invalid syntax in $file"
-              exit 1
-            fi
+          FILES=$(find . -name "*.properties")
+          for FILE in $FILES
+          do
+            while IFS= read -r LINE
+            do
+              if [[ ! $LINE =~ ^[a-zA-Z0-9.]*=.*$|^#.*$|^$ ]]; then
+                echo "Syntax error in file $FILE: $LINE"
+                exit 1
+              fi
+            done < "$FILE"
           done

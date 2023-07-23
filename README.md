@@ -18,8 +18,8 @@ Languages are gateways to the world. If you're fluent in a language that we don'
 
 When contributing, please ensure to follow these conventions:
 
-- The filename should follow this structure: `messages_[LANGUAGE]_[(optional) COUNTRY CODE].properties`.
-- The syntax within the file should look like this: `test.string="test"`.
+- The filename should follow this structure: `messages_[LANGUAGE].properties`.
+- The syntax within the file should look like this: `test.string=test`.
 - No special characters except a period are allowed before the equals sign, like: `te/st.string="test"`.
 
 ## How can I contribute?

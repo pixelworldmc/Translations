@@ -29,6 +29,10 @@ When contributing, please ensure to follow these conventions:
 3. Submit a **pull request** to propose your changes.
 4. After a review, your changes will be merged into the main repository.
 
+## Rewards for Contributions
+
+In appreciation of your efforts, for every accepted pull request, you will receive a reward in the game! To redeem your rewards, please connect your game account with GitHub by typing `/link github` in the game.
+
 ## Help and Support
 
 If you need help or have questions, feel free to open an issue and we'll get to it as soon as possible!
